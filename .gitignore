@@ -1,0 +1,22 @@
+# Build products
+/build/
+/out/
+/dist/
+*.user
+*.suo
+*.VC.db
+*.VC.opendb
+
+# Editor/OS
+.vs/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Runtime artifacts
+*.log
+*.dll
+*.pdb
+*.lib
+*.exp

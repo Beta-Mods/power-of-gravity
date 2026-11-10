@@ -1,0 +1,61 @@
+name: Build
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  portable-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure portable tests
+        run: cmake -S . -B build/portable -DCMS2_BUILD_PLUGIN=OFF -DCMS2_BUILD_TESTS=ON
+
+      - name: Build portable tests
+        run: cmake --build build/portable --parallel
+
+      - name: Test
+        run: ctest --test-dir build/portable --output-on-failure
+
+      - name: Validate manifests
+        run: |
+          python3 - <<'PY'
+          import json
+          import xml.etree.ElementTree as ET
+          json.load(open('vcpkg.json', encoding='utf-8'))
+          json.load(open('CMakePresets.json', encoding='utf-8'))
+          ET.parse('package/fomod/info.xml')
+          print('Manifest checks passed.')
+          PY
+
+  windows-release:
+    needs: portable-tests
+    runs-on: windows-2022
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install CMake
+        uses: lukka/get-cmake@latest
+
+      - name: Restore vcpkg
+        uses: lukka/run-vcpkg@v11
+        with:
+          vcpkgGitCommitId: ee12231b20c95013c6638d845d04c91559a1d1ff
+
+      - name: Build, test, and package
+        shell: pwsh
+        run: |
+          $env:VCPKG_ROOT = "${{ github.workspace }}\vcpkg"
+          ./tools/build-release.ps1
+
+      - name: Upload release package
+        uses: actions/upload-artifact@v4
+        with:
+          name: CustomMoonSizes2-2.0.0
+          path: build/vs2022/CustomMoonSizes2-*.zip
+          if-no-files-found: error
