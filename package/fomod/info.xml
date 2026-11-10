@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <fomod>
-  <Name>Moon Scaler NG</Name>
+  <Name>Power of Gravity</Name>
   <Author>CKW25</Author>
-  <Version MachineVersion="2.0.0.0">2.0.0</Version>
+  <Version MachineVersion="1.0.0.0">1.0.0</Version>
   <Website>https://www.nexusmods.com/skyrimspecialedition/mods/41327</Website>
-  <Description>In-game SKSE Menu Framework sliders for Masser and Secunda.</Description>
+  <Description>SKSE plugin for sun/moon gravity pull effect with screen shake.</Description>
 </fomod>

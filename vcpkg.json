@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/microsoft/vcpkg-tool/main/docs/vcpkg.schema.json",
   "name": "custom-moon-sizes-2",
-  "version-semver": "2.0.0",
+  "version-semver": "1.0.0",
   "description": "SKSE plugin that changes Masser and Secunda size at runtime.",
   "license": "GPL-3.0-or-later",
   "supports": "windows & x64",

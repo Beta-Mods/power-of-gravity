@@ -10,7 +10,7 @@
 - Do not package SKSE, Address Library, or SKSE Menu Framework with this mod.
 
 ## Project facts
-- Product: **Moon Scaler NG** `2.0.0` — native SKSE/CommonLibSSE-NG plugin for Skyrim SE/AE (x64).
+- Product: **Moon Scaler NG** `1.0.0` — native SKSE/CommonLibSSE-NG plugin for Skyrim SE/AE (x64).
 - Output: `Data/SKSE/Plugins/MoonScalerNG.dll` + `MoonScalerNG.ini`.
 - Runtime requirements: SKSE64, Address Library, SKSE Menu Framework 3.x for the in-game page (INI still loads without it).
 - Scope: no ESP/ESL/ESM, no Papyrus, no moon textures/meshes, no save dependency, no telemetry/network at runtime.

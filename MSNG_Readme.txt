@@ -82,7 +82,7 @@ Skyrim Script Extender and Address Library
 
 CHANGELOG
 ---------
-2.0.0
+1.0.0
   - Initial release as a native SKSE/CommonLibSSE-NG plugin.
   - Sun scaling with screen shake effect.
   - Background thread safe-point scaling.

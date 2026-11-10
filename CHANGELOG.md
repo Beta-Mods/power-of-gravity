@@ -1,6 +1,6 @@
 # Changelog
 
-## 2.0.0
+## 1.0.0
 
 - Reimplemented moon sizing as an SKSE/CommonLibSSE-NG plugin.
 - Added independent Masser and Secunda sliders through SKSE Menu Framework.
