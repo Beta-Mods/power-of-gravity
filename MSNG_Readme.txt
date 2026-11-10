@@ -1,4 +1,4 @@
-Power of Gravity v2.0.0
+Power of Gravity v1.0.0
 =======================
 
 A native SKSE plugin for Skyrim Special Edition / Anniversary Edition that
